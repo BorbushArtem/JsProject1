@@ -7,13 +7,37 @@ const PersonalMovieDB= {
     'genres': [],
     'privat': false
 };
-
-nummberOfFilms1 = prompt('Один из последних просмотренных фильмов', '');
-nummberOfFilms2 = prompt('Насколько оцените', '');
-nummberOfFilms3 = prompt('Один из последних просмотренных фильмов', '');
-nummberOfFilms4 = prompt('Насколько оцените', '');
 const movies= {};
-movies[nummberOfFilms1]= nummberOfFilms2;
-movies[nummberOfFilms3]= nummberOfFilms4;
+
+
+for (let i = 0; i < 2; i++) {
+    let nummberOfFilms1 = prompt('Один из последних просмотренных фильмов', '');
+    let nummberOfFilms2 = prompt('Насколько оцените', '');
+    if (nummberOfFilms1 != '' && nummberOfFilms2 != '' && nummberOfFilms2 != null && nummberOfFilms1 != null && nummberOfFilms1.length <51) {
+            movies[nummberOfFilms1]= nummberOfFilms2;
+            
+         }
+    else {
+        i--;
+    
+}
+}
+
+if (PersonalMovieDB['count'] < 10) {
+    console.log('Просмотрено довольно мало фильмов');
+}
+else if (10 < PersonalMovieDB['count'] && PersonalMovieDB['count'] < 30) {
+    console.log('Вы класический зритель');
+}
+else if (PersonalMovieDB['count'] > 30) {
+    console.log('Вы киноман');
+}
+else {
+    console.log('Ошибка');
+}
 console.log(PersonalMovieDB)
 console.log(movies)
+
+
+
+
